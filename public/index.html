@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>PSN Musical</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lucida Sans', sans-serif;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+
+    nav {
+      background-color: #f3dfcc;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      font-family: 'Lora', serif;
+    }
+
+    nav .logo h2 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #2f0b0a;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    #home {
+      background-color: #2f0b0a;
+      color: #f3dfcc;
+      padding: 20px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 90vh;
+    }
+
+    .home-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .slideshow {
+      width: 80%;
+      height: 75vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin-top: 15px;
+      border-radius: 5px;
+    }
+
+    .slideshow img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    .slideshow img.active {
+      opacity: 1;
+    }
+
+    .home-heading {
+      width: 50%;
+      text-align: left;
+      margin-left: 55px;
+    }
+
+    #home h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-style: italic;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    #home h3 {
+      font-family: 'Lucida Sans', sans-serif;
+      font-size: 1.5rem;
+      color: #f3dfcc;
+      margin-top: 1px;
+      font-weight: normal; 
+      text-align: center;
+    }
+
+    #about {
+      background-color: #f3dfcc;
+      padding: 20px;
+    }
+
+    #about-content {
+      display: flex;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    #about-text {
+      flex: 1;
+      margin-right: 20px;
+      color: #2f0b0a;
+    }
+
+    #about-text p {
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    #about-text h1 {
+      color: #2f0b0a;
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+    }
+
+    #about-img {
+      flex: 1;
+      text-align: right;
+      padding-left: 20px;
+    }
+
+    #about-img img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #contact {
+      background-color: #2f0b0a;
+      color: #f3dfcc;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    #contact h1 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    #contact p {
+      margin: 10px 0;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .social-media {
+      display: inline-flex;
+      gap: 10px;
+    }
+
+    .social-media a {
+      color: #f3dfcc;
+      font-size: 24px;
+      text-decoration: none;
+    }
+
+    .social-media a:hover {
+      color: #6e3b39;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <h2>PSN Musicals</h2>
+    </div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="/members">Members</a></li>
+      <li><a href="/past-events">Past Events</a></li>
+      <li><a href="/upcoming-events">Upcoming Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="/login">Login</a></li>
+    </ul>
+  </nav>
+
+  <div id="home">
+    <div class="home-content">
+      <div class="slideshow">
+        <img src="/images/35fddf53-0a9c-457a-a187-7132dc817db8.jpg" alt="Musical Image 1" class="active">
+        <img src="/images/e9aff2cd-d77e-4cb3-b1a6-428a64a0aa9d.jpg" alt="Image 2">
+        <img src="/images/PHOTO-2021-11-14-13-24-30.jpg" alt="Image 3">
+        <img src="/images/PHOTO-2021-11-14-13-24-31.jpg" alt="Image 4">
+        <img src="/images/PHOTO-2021-11-14-13-24-58.jpg" alt="Image 5">
+      </div>
+      <div class="home-heading">
+        <h1>
+          PSN Musicals
+        </h1>
+        <h3>
+          where bollywood beats meets 
+          <br>
+          classical elegance
+        </h3>
+      </div>
+    </div>
+  </div>
+
+  <div id="about">
+    <div id="about-content">
+      <div id="about-text">
+        <h1>About Us</h1>
+        <p>
+          PSN Musical is a vibrant musical group based in Prestige Shantiniketan, Whitefield, Bangalore. 
+          Established in September 2018, we specialize in Bollywood karaoke performances, showcasing our 
+          passion for entertaining and engaging audiences with lively renditions of popular Bollywood hits.
+        </p>
+        <p>
+          Our group comprises skilled individuals trained in both Hindustani classical and Carnatic music. 
+          This diverse expertise allows us to offer a rich blend of traditional and contemporary music, 
+          including live performances that captivate and inspire.
+        </p>
+        <p>
+          If you're interested in joining us for a musical journey or would like to experience our live 
+          performances, please reach out to us through the contact form below. We look forward to 
+          connecting with you and sharing our love for music!
+        </p>
+      </div>
+      <div id="about-img">
+        <img src="/images/about_img.png" alt="About Image">
+      </div>
+    </div>
+  </div>  
+
+  <div id="contact">
+    <h1>Contact Us</h1>
+    <div class="container">
+      <p>a16474@gmail.com</p>
+      <div class="contact-info">
+        <p>+91 9731395394</p>
+        <div class="social-media">
+          <a href="https://www.facebook.com/psn.musicals.5/" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slideshow img');
+
+    function showSlides() {
+      slides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (slideIndex === index) {
+          console.log(`Displaying slide ${index + 1}`);
+        }
+      });
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].classList.add('active');
+      console.log(`Active slide index: ${slideIndex - 1}`);
+      setTimeout(showSlides, 7000); 
+    }
+
+    showSlides();
+  </script>
+</body>
+</html>

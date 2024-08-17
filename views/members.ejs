@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Members - PSN Musical</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lucida Sans', sans-serif;
+      background-color: #2f0b0a;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+
+    nav {
+      background-color: #f3dfcc;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      font-family: 'Lora', serif;
+    }
+
+    nav .logo h2 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #2f0b0a;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    #members {
+      padding: 20px;
+      text-align: center;
+      background-color: #2f0b0a; 
+      color: #f3dfcc;
+    }
+
+    #members h1 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 40px;
+      font-style: italic;
+      color: #f3dfcc;
+    }
+
+    .member-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); 
+      gap: 20px;
+      justify-content: center;
+      max-width: 1200px; 
+      margin: 0 auto;
+    }
+
+    .member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .member img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border: 2px solid #f3dfcc; 
+      margin-top: 20px; 
+    }
+
+    .member-name {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #f3dfcc; 
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <h2>PSN Musicals</h2>
+    </div>
+    <ul>
+      <% if (authenticated) { %>
+          <li><a href="/dashboard">Home</a></li>
+          <li><a href="/dashboard">About</a></li>
+          <li><a href="/members">Members</a></li>
+          <li><a href="/past-events">Past Events</a></li>
+          <li><a href="/upcoming-events">Upcoming Events</a></li>
+          <li><a href="/add-event">Add Event</a></li>
+          <li><a href="/edit-event">Edit Event</a></li>
+          <li><a href="/dashboard">Contact</a></li>
+          <li><a href="/logout">Logout</a></li>
+      <% } else { %>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">About</a></li>
+          <li><a href="/members">Members</a></li>
+          <li><a href="/past-events">Past Events</a></li>
+          <li><a href="/upcoming-events">Upcoming Events</a></li>
+          <li><a href="/">Contact</a></li>
+          <li><a href="/login">Login</a></li>
+      <% } %>
+  </ul>
+  </nav>
+
+  <div id="members">
+    <h1>Our Members</h1>
+    <div class="member-container">
+      <div class="member">
+        <img src="/images/Amit.jpg" alt="Member 1">
+        <div class="member-name">Amit</div>
+      </div>
+      <div class="member">
+        <img src="/images/Hitesh.JPG" alt="Member 3">
+        <div class="member-name">Hitesh</div>
+      </div>
+      <div class="member">
+        <img src="/images/Satvika.jpg" alt="Member 2">
+        <div class="member-name">Satvika</div>
+      </div>
+      <div class="member">
+        <img src="/images/Pallavi.jpg" alt="Member 4">
+        <div class="member-name">Pallavi</div>
+      </div>
+      <div class="member">
+        <img src="/images/Sumit.jpg" alt="Member 5">
+        <div class="member-name">Sumit</div>
+      </div>
+      <div class="member">
+        <img src="/images/Archana.jpg" alt="Member 6">
+        <div class="member-name">Archana</div>
+      </div>
+      <div class="member">
+        <img src="/images/Bhaskar.jpg" alt="Member 7">
+        <div class="member-name">Bhaskar</div>
+      </div>
+      <div class="member">
+        <img src="/images/Akansha.JPG" alt="Member 8">
+        <div class="member-name">Akansha</div>
+      </div>
+      <div class="member">
+        <img src="/images/BhaskarK.jpg" alt="Member 9">
+        <div class="member-name">Bhaskar K</div>
+      </div>
+      <div class="member">
+        <img src="/images/Akshita.jpg" alt="Member 10">
+        <div class="member-name">Akshita</div>
+      </div>
+      <div class="member">
+        <img src="/images/Bimal.jpg" alt="Member 11">
+        <div class="member-name">Bimal</div>
+      </div>
+      <div class="member">
+        <img src="/images/Deepika.JPG" alt="Member 12">
+        <div class="member-name">Deepika</div>
+      </div>
+      <div class="member">
+        <img src="/images/Deshmukh.JPG" alt="Member 13">
+        <div class="member-name">Deshmukh</div>
+      </div>
+      <div class="member">
+        <img src="/images/Kiran.jpg" alt="Member 14">
+        <div class="member-name">Kiran</div>
+      </div>
+      <div class="member">
+        <img src="/images/Kumar.jpg" alt="Member 15">
+        <div class="member-name">Kumar</div>
+      </div>
+      <div class="member">
+        <img src="/images/Kuntala.jpg" alt="Member 16">
+        <div class="member-name">Kuntala</div>
+      </div>
+      <div class="member">
+        <img src="/images/Sidhartha.jpg" alt="Member 26">
+        <div class="member-name">Sidhartha</div>
+      </div>
+      <div class="member">
+        <img src="/images/Maneesh.jpg" alt="Member 17">
+        <div class="member-name">Maneesh</div>
+      </div>
+      <div class="member">
+        <img src="/images/Ruchi.JPG" alt="Member 18">
+        <div class="member-name">Ruchi</div>
+      </div>
+      <div class="member">
+        <img src="/images/Mohit.jpg" alt="Member 19">
+        <div class="member-name">Mohit</div>
+      </div>
+      <div class="member">
+        <img src="/images/Vikas.jpg" alt="Member 20">
+        <div class="member-name">Vikas</div>
+      </div>
+      <div class="member">
+        <img src="/images/Praveen.jpg" alt="Member 21">
+        <div class="member-name">Praveen</div>
+      </div>
+      <div class="member">
+        <img src="/images/Sneha.jpg" alt="Member 22">
+        <div class="member-name">Sneha</div>
+      </div>
+      <div class="member">
+        <img src="/images/Rajesh.jpg" alt="Member 23">
+        <div class="member-name">Rajesh</div>
+      </div>
+      <div class="member">
+        <img src="/images/Sushma.jpg" alt="Member 24">
+        <div class="member-name">Sushma</div>
+      </div>
+      <div class="member">
+        <img src="/images/Ram.JPG" alt="Member 25">
+        <div class="member-name">Ram</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

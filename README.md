@@ -19,7 +19,7 @@ npm init
 ```
 5. Install dependencies:
 ```
-npm i express passport passport-google-oauth20 express-session body-parser path url fs multer
+npm i express passport passport-google-oauth20 express-session body-parser path url fs multer ejs
 ```
 6. Set up Google OAuth Credentials:
 * Create a Google Developer Console project.

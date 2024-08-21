@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Lucida Sans', sans-serif;
+            background-color: #2f0b0a;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        nav {
+            background-color: #f3dfcc;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            font-family: 'Lora', serif;
+        }
+
+        nav .logo h2 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #2f0b0a;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: 130px auto; 
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f3dfcc;
+        }
+
+        .container h2 {
+            margin-bottom: 10px;
+        }
+
+        .container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container form label,
+        .container form .form-group {
+            margin: 10px 0;
+        }
+
+        .container form .form-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .container form select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-right: 10px; 
+        }
+
+        .container form button {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #2f0b0a;
+            color: #f3dfcc;
+            cursor: pointer;
+        }
+
+        .container form button:hover {
+            background-color: #6e3b39;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h2>PSN Musicals</h2>
+        </div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/members">Members</a></li>
+            <li><a href="/past-events">Past Events</a></li>
+            <li><a href="/upcoming-events">Upcoming Events</a></li>
+            <li><a href="/">Contact</a></li>
+            <li><a href="/login">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Login</h2>
+        <form id="membership-form">
+            <label for="member">Are you a member?</label>
+            <div class="form-group">
+                <select id="member" name="member">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('membership-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const memberStatus = document.getElementById('member').value;
+            if (memberStatus === 'yes') {
+                window.location.href = '/auth/google';
+            } else {
+                alert('Only members can login');
+                window.location.href = '/';
+            }
+        });
+    </script>
+</body>
+</html>

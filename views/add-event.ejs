@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Lucida Sans', sans-serif;
+            background-color: #2f0b0a;
+            color: #f3dfcc;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        nav {
+            background-color: #f3dfcc;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            font-family: 'Lora', serif;
+        }
+
+        nav .logo h2 {
+            margin: 0;
+            color: #2f0b0a;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #2f0b0a;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto; 
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f3dfcc;
+            color: #2f0b0a;
+        }
+
+        .container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container form label,
+        .container form input,
+        .container form textarea {
+            margin: 10px 0;
+            width: 97.5%;
+        }
+
+        .container form input,
+        .container form textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .container form button {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #2f0b0a;
+            color: #f3dfcc;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .container form button:hover {
+            background-color: #6e3b39;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h2>PSN Musicals</h2>
+        </div>
+        <ul>
+            <li><a href="/dashboard">Home</a></li>
+            <li><a href="/dashboard">About</a></li>
+            <li><a href="/members">Members</a></li>
+            <li><a href="/past-events">Past Events</a></li>
+            <li><a href="/upcoming-events">Upcoming Events</a></li>
+            <li><a href="/add-event">Add Event</a></li>
+            <li><a href="/edit-event">Edit Event</a></li>
+            <li><a href="/dashboard">Contact</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Add Event</h2>
+        <form id="addEventForm" action="/add-event" method="post" enctype="multipart/form-data">
+            <label for="eventName">Event Name:</label>
+            <input type="text" id="eventName" name="eventName" required>
+            <br>
+            <label for="eventDate">Event Date:</label>
+            <input type="date" id="eventDate" name="eventDate" required>
+            <br>
+            <label for="eventHost">Event Host:</label>
+            <input type="text" id="eventHost" name="eventHost" required>
+            <br>
+            <label for="anchor">Event Anchor:</label>
+            <input type="text" id="anchor" name="anchor" required>
+            <br>
+            <label for="tracks">Tracks Downloaded By:</label>
+            <input type="text" id="tracks" name="tracks" required>
+            <br>
+            <label for="sheetMngt">Sheets Managed By:</label>
+            <input type="text" id="sheetMngt" name="sheetMngt" required>
+            <br>
+            <label for="batteriesBy">Batteries By:</label>
+            <input type="text" id="batteriesBy" name="batteriesBy" required>
+            <br>
+            <label for="numAttendees">Number of Attendees:</label>
+            <input type="number" id="numAttendees" name="numAttendees">
+            <br>
+            <label for="attendeesSongs">Attendees and their Songs:</label>
+            <textarea id="attendeesSongs" name="attendeesSongs" rows="4" ></textarea>
+            <br>
+            <label for="eventDetails">Details:</label>
+            <textarea id="eventDetails" name="eventDetails" rows="4"></textarea>
+            <br>
+            <label for="photos">Upload Photos:</label>
+            <input type="file" id="photos" name="photos" multiple>
+            <br>
+            <button type="submit">Add Event</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('addEventForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+
+            fetch('/add-event', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.status === 400) {
+                    return response.json();
+                }
+                window.location.href = '/dashboard';
+            })
+            .then(data => {
+                if (data && data.error) {
+                    alert(data.error);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

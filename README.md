@@ -29,4 +29,4 @@ npm i express passport passport-google-oauth20 express-session body-parser path 
 ```
 node index.js
 ```
-The application will be accessible at 'http://localhost:3000'.
+The application will be accessible at 'www.psnmusicals.com/'.
